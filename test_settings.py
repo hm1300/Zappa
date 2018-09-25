@@ -19,7 +19,8 @@ AWS_EVENT_MAPPING = {
     'arn:aws:s3:1': 'test_settings.aws_s3_event',
     'arn:aws:sns:1': 'test_settings.aws_sns_event',
     'arn:aws:dynamodb:1': 'test_settings.aws_dynamodb_event',
-    'arn:aws:kinesis:1': 'test_settings.aws_kinesis_event'
+    'arn:aws:kinesis:1': 'test_settings.aws_kinesis_event',
+    'arn:aws:sqs:1': 'test_settings.aws_sqs_event'
 }
 
 ENVIRONMENT_VARIABLES={'testenv': 'envtest'}
@@ -56,6 +57,9 @@ def aws_kinesis_event(event, content):
 
 def authorizer_event(event, content):
     return "AUTHORIZER_EVENT"
+
+def aws_sqs_event(event, content):
+    return "AWS SQS EVENT"
 
 
 def command():
